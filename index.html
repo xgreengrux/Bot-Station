@@ -265,6 +265,79 @@ button.mcard{cursor:pointer}button.mcard:hover{border-color:var(--ac)}
   .sabrow{flex-direction:column}
 }
 
+/* title extras, lobby visibility chip */
+.privrow{display:flex;align-items:center;justify-content:center;gap:8px;margin:10px 0 0;color:var(--mu);font-size:.82rem;cursor:pointer}
+.privrow input{accent-color:var(--ac);width:16px;height:16px;margin:0;cursor:pointer}
+#tBrowse{width:100%;margin-top:10px}
+.vis{display:block;font:inherit;font-size:.78rem;font-weight:700;margin-top:8px;padding:4px 12px;border-radius:999px;border:1px solid var(--bd);background:var(--p2);color:var(--tx);cursor:default}
+.vis.on{border-color:#1d6b42;background:#12432a;color:#bbf7d0}
+.vis.off{border-color:#6b4a1d;background:#3a2a12;color:#fde68a}
+.vis.can{cursor:pointer}
+.vis.can:hover{filter:brightness(1.25)}
+.vis:disabled{opacity:1}
+
+/* party browser */
+#browser{justify-content:flex-start;background:rgba(7,10,20,.55)}
+.bw-card{width:min(860px,100%);display:flex;flex-direction:column;gap:12px;margin:auto 0;max-height:calc(100vh - 36px);overflow:hidden}
+.bw-head{display:flex;align-items:center;gap:12px}
+.bw-head h2{margin:0;flex:1;font-size:1.25rem;letter-spacing:.08em;text-transform:uppercase}
+.bw-live{font-size:.78rem;font-weight:800;color:var(--mu);white-space:nowrap}
+.bw-live.on{color:var(--ok)}
+.bw-live.off{color:#fca5a5}
+.bw-who{display:flex;align-items:center;gap:10px;color:var(--mu);font-size:.82rem;white-space:nowrap}
+.bw-who .inp{margin:0;max-width:240px}
+.bw-search{display:flex;gap:10px;align-items:center}
+.bw-box{position:relative;flex:1;min-width:0}
+.bw-box .inp{margin:0;padding-right:38px}
+.bw-clear{position:absolute;right:4px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--mu);cursor:pointer;font-size:1rem;padding:6px 10px}
+.seg{display:flex;border:1px solid var(--bd);border-radius:10px;overflow:hidden;flex:none}
+.seg-b{font:inherit;font-weight:800;font-size:.8rem;background:var(--p2);color:var(--mu);border:0;padding:12px 14px;cursor:pointer}
+.seg-b.on{background:#14304a;color:#fff}
+.bw-hint{color:var(--mu);font-size:.78rem;margin-top:-4px}
+.bw-card .msg{margin:0;min-height:0}
+#bwMsg:empty{display:none}
+.inp.bad{border-color:#f87171;box-shadow:0 0 0 3px rgba(248,113,113,.22)}
+.bw-more{align-self:center;margin:4px 0 2px}
+.bw-list{display:flex;flex-direction:column;gap:8px;overflow:auto;min-height:150px;flex:1 1 auto;padding-right:2px}
+.bparty{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;background:var(--p2);border:1px solid var(--bd);border-radius:14px;padding:12px 14px}
+.bparty.closed{opacity:.72}
+.bp-code{font-weight:900;font-size:1.35rem;letter-spacing:.18em;color:var(--ac)}
+.bp-code.hit{background:rgba(251,191,36,.2);border-radius:6px;color:var(--warn);padding:0 6px}
+.bp-top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+.bp-leader{font-weight:800}
+.pill{font-size:.72rem;font-weight:800;border-radius:999px;padding:2px 9px;border:1px solid var(--bd)}
+.pill.pl-lobby{background:#12432a;border-color:#1d6b42;color:#bbf7d0}
+.pill.pl-countdown{background:#3a2a12;border-color:#6b4a1d;color:#fde68a}
+.pill.pl-game{background:#3a1520;border-color:#6b2232;color:#fecaca}
+.pill.pl-full{background:#26264a;border-color:#3b3b80;color:#c7d2fe}
+.bp-players{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:5px;background:#0b1126;border:1px solid var(--bd);border-radius:999px;padding:2px 10px 2px 4px;font-size:.82rem}
+.chip canvas{width:26px;height:26px;display:block}
+.chip.hit{border-color:var(--warn);background:rgba(251,191,36,.16);font-weight:800;color:#fff}
+.chip.off{opacity:.5}
+.bw-empty{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;color:var(--mu);padding:30px 10px}
+.bw-empty b{color:var(--tx)}
+.bw-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.bw-count{color:var(--mu);font-size:.82rem}
+#browser.busy .bparty .btn{pointer-events:none;opacity:.5}
+@media (max-width:620px), (max-height:640px){
+  #browser{justify-content:flex-start}
+  .bw-card{max-height:none;overflow:visible;margin:0 auto}
+  .bw-list{overflow:visible;min-height:0;flex:none;padding-right:0}
+}
+@media (max-width:620px){
+  .bw-card{padding:18px}
+  .bparty{grid-template-columns:1fr auto;grid-template-areas:"code act" "main main";gap:8px 10px}
+  .bp-code{grid-area:code;font-size:1.15rem}
+  .bp-act{grid-area:act}
+  .bp-main{grid-area:main}
+  .bw-who .inp{max-width:none;flex:1}
+  .bw-head h2{font-size:1.05rem}
+  .bw-search{flex-wrap:wrap}
+  .bw-box{flex:1 1 100%}
+  .seg{margin-left:auto}
+}
+
 </style>
 </head>
 <body>
@@ -272,6 +345,7 @@ button.mcard{cursor:pointer}button.mcard:hover{border-color:var(--ac)}
 
 <div id="title" class="screen"></div>
 <div id="lobby" class="screen hidden"></div>
+<div id="browser" class="screen hidden"></div>
 
 <div id="hud" class="hidden">
   <div id="hudtop">
@@ -597,6 +671,7 @@ class Host {
     this.minPlayers = o.minPlayers || C.MIN_PLAYERS;
     this.rng = o.rng || Math.random;
     this.onClosed = o.onClosed || null;
+    this.public = o.public !== false;       // listed in the party browser (the leader can switch this in the lobby)
     this.idleTimeout = o.idleTimeout !== undefined ? o.idleTimeout : 12;   // seconds of silence before a remote player counts as dropped
     this.idleCheck = 0;
     this.settings = BS.defaultSettings();
@@ -713,11 +788,28 @@ class Host {
   lobbyMsg() {
     return {
       k: 'lobby', code: this.code, phase: this.phase, leader: this.leader, min: this.minPlayers, max: C.MAX_PLAYERS,
-      cd: this.phase === 'countdown' ? Math.max(0, this.countdown) : 0, settings: this.settings,
+      cd: this.phase === 'countdown' ? Math.max(0, this.countdown) : 0, settings: this.settings, pub: this.public,
       players: [...this.players.values()].filter(p => !p.gone).map(p => ({ id: p.id, name: p.name, color: p.color, hat: p.hat, conn: p.conn }))
     };
   }
   sendLobby() { this.all(this.lobbyMsg()); }
+
+  // What the public party list shows about this party (null = do not list). Names are already sanitised in onJoin/m_look.
+  publicInfo() {
+    if (this.closed || !this.public) return null;
+    const list = [...this.players.values()].filter(p => !p.gone), lead = this.players.get(this.leader);
+    return {
+      c: this.code, ph: this.phase === 'lobby' ? 'lobby' : this.phase === 'countdown' ? 'countdown' : 'game',
+      n: list.length, max: C.MAX_PLAYERS, min: this.minPlayers, ld: lead ? lead.name : '',
+      p: list.map(p => [p.name, p.color, p.hat, p.conn ? 1 : 0])
+    };
+  }
+
+  m_visibility(p, m) {
+    if (p.id !== this.leader || (this.phase !== 'lobby' && this.phase !== 'countdown')) return;
+    this.public = !!m.value;
+    this.sendLobby();
+  }
 
   m_look(p, m) {
     if (this.phase !== 'lobby' && this.phase !== 'countdown') return;
@@ -1417,6 +1509,361 @@ Net.ticker = (fn, ms) => {
 };
 })(typeof window !== 'undefined' ? window : globalThis);
 
+/* ---- mqtt.js ---- */
+/* Bot Station - a tiny MQTT 3.1.1 client over WebSocket (QoS 0 only).
+   It is used for exactly one thing: the public party list (see registry.js). Supports CONNECT with a last-will,
+   retained PUBLISH, SUBSCRIBE and keep-alive pings. Works in browsers and in Node 22+ (global WebSocket). */
+(function (g) {
+'use strict';
+const BS = g.BS = g.BS || {};
+const enc = new TextEncoder(), dec = new TextDecoder();
+const CONNACK = 2, PUBLISH = 3, SUBACK = 9;
+
+/* ---------------------------------------------------------------- encoding */
+const varint = n => { const o = []; do { let d = n % 128; n = Math.floor(n / 128); if (n > 0) d |= 128; o.push(d); } while (n > 0); return o; };
+const str = s => { const b = enc.encode(s); return [b.length >> 8, b.length & 255, ...b]; };
+const packet = (b0, body) => {
+  const rl = varint(body.length), out = new Uint8Array(1 + rl.length + body.length);
+  out[0] = b0; out.set(rl, 1); out.set(body, 1 + rl.length);
+  return out;
+};
+const E = {
+  connect(o) {
+    const will = o.will, user = o.username != null && o.username !== '', pass = user && o.password != null;
+    const flags = 0x02 | (will ? 0x04 | (will.retain ? 0x20 : 0) : 0) | (user ? 0x80 : 0) | (pass ? 0x40 : 0);
+    const ka = o.keepalive | 0;
+    const body = [...str('MQTT'), 4, flags, ka >> 8, ka & 255, ...str(o.clientId)];
+    if (will) { const m = enc.encode(will.payload || ''); body.push(...str(will.topic), m.length >> 8, m.length & 255, ...m); }
+    if (user) body.push(...str(o.username));
+    if (pass) body.push(...str(o.password));
+    return packet(0x10, body);
+  },
+  publish: (topic, payload, retain) => packet(0x30 | (retain ? 1 : 0), [...str(topic), ...enc.encode(payload || '')]),
+  subscribe: (id, filter) => packet(0x82, [id >> 8, id & 255, ...str(filter), 0]),
+  pingreq: () => new Uint8Array([0xc0, 0]),
+  disconnect: () => new Uint8Array([0xe0, 0])
+};
+
+/* ------------------------------------------------------- stream -> packets */
+// A WebSocket frame may hold several MQTT packets or only part of one, so parse a byte stream.
+class Parser {
+  constructor(onPacket) { this.buf = new Uint8Array(0); this.onPacket = onPacket; }
+  push(chunk) {
+    const nb = new Uint8Array(this.buf.length + chunk.length); nb.set(this.buf); nb.set(chunk, this.buf.length); this.buf = nb;
+    for (;;) {
+      const b = this.buf;
+      if (b.length < 2) return;
+      let mult = 1, len = 0, i = 1, d, n = 0;
+      do {
+        if (i >= b.length) return;
+        d = b[i++]; len += (d & 127) * mult; mult *= 128;
+        if (++n > 4) throw new Error('malformed length');
+      } while (d & 128);
+      if (b.length < i + len) return;
+      this.buf = b.subarray(i + len);
+      this.onPacket(b[0], b.subarray(i, i + len));
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ client */
+/* new Client(url, { clientId, keepalive, username, password, will:{topic,payload,retain},
+                     onOpen(), onMessage(topic, payload, retained), onClose(reason), onSub(ok) }) */
+class Client {
+  constructor(url, o) {
+    this.o = o; this.connected = false; this.dead = false; this.pid = 0; this.lastRx = this.lastTx = Date.now();
+    this.ka = o.keepalive || 30;
+    this.parser = new Parser((b0, body) => this.onPacket(b0, body));
+    let ws;
+    try { ws = new g.WebSocket(url, 'mqtt'); } catch (e) { setTimeout(() => this.fail('open'), 0); return; }
+    ws.binaryType = 'arraybuffer'; this.ws = ws;
+    this.connTimer = setTimeout(() => this.fail('timeout'), o.connectTimeout || 10000);
+    ws.onopen = () => this.raw(E.connect(Object.assign({ keepalive: this.ka }, o)));
+    ws.onmessage = e => {
+      if (typeof e.data === 'string') return;
+      this.lastRx = Date.now();
+      try { this.parser.push(new Uint8Array(e.data)); } catch (err) { this.fail('protocol'); }
+    };
+    ws.onerror = () => this.fail('error');  // browsers follow with a close event; Node's WebSocket does not, so don't wait for it
+    ws.onclose = () => this.fail('closed');
+    this.timer = setInterval(() => this.pulse(), 1000);
+  }
+  raw(bytes) { if (this.ws && this.ws.readyState === 1) { this.ws.send(bytes); this.lastTx = Date.now(); return true; } return false; }
+  // keep-alive: ping when quiet, give up when the broker has been silent for 1.5x the interval
+  pulse() {
+    if (!this.connected || this.dead) return;
+    const now = Date.now();
+    if (now - this.lastRx > this.ka * 1500) return this.fail('timeout');
+    if (now - this.lastTx >= this.ka * 500) this.raw(E.pingreq());
+  }
+  onPacket(b0, body) {
+    const type = b0 >> 4;
+    if (type === CONNACK) {
+      if (body.length < 2) return this.fail('protocol');
+      if (body[1] !== 0) return this.fail('refused:' + body[1]);
+      this.connected = true; clearTimeout(this.connTimer);
+      if (this.o.onOpen) this.o.onOpen();
+    } else if (type === PUBLISH) {
+      const qos = (b0 >> 1) & 3, tl = (body[0] << 8) | body[1], topic = dec.decode(body.subarray(2, 2 + tl));
+      let p = 2 + tl;
+      if (qos > 0) { const id = (body[p] << 8) | body[p + 1]; p += 2; if (qos === 1) this.raw(new Uint8Array([0x40, 2, id >> 8, id & 255])); }
+      if (this.o.onMessage) this.o.onMessage(topic, dec.decode(body.subarray(p)), !!(b0 & 1));
+    } else if (type === SUBACK) {
+      if (this.o.onSub) this.o.onSub(body.length > 2 && body[2] < 0x80);
+    }
+  }
+  subscribe(filter) { this.pid = (this.pid % 65535) + 1; return this.raw(E.subscribe(this.pid, filter)); }
+  publish(topic, payload, retain) { return this.connected && this.raw(E.publish(topic, payload, retain)); }
+  fail(reason) {
+    if (this.dead) return;
+    this.dead = true; this.connected = false; clearTimeout(this.connTimer); clearInterval(this.timer);
+    try { this.ws.close(); } catch (e) { /* ignore */ }
+    if (this.o.onClose) this.o.onClose(reason);
+  }
+  // graceful: send DISCONNECT first (the broker then discards the last-will); otherwise just drop the socket
+  close(graceful) {
+    if (this.dead) return;
+    if (graceful && this.connected) this.raw(E.disconnect());
+    this.dead = true; this.connected = false; clearTimeout(this.connTimer); clearInterval(this.timer);
+    try { this.ws.close(); } catch (e) { /* ignore */ }
+  }
+}
+
+BS.Mqtt = { Client, Parser, encode: E };
+})(typeof window !== 'undefined' ? window : globalThis);
+
+/* ---- registry.js ---- */
+/* Bot Station - the public party list ("party browser").
+   There is no game server, so public parties announce themselves on a shared bulletin board: a free public MQTT broker.
+     - A public party's leader keeps a *retained* message on  botstation/v1/parties/<CODE>  up to date (players, status).
+       A last-will clears it if the leader's connection dies; leaving or closing the party clears it explicitly.
+     - The party browser subscribes to botstation/v1/parties/+ : the broker hands over every retained message at once,
+       then live changes. Searching is done locally over the player names in those messages.
+   Several brokers are used at the same time (publish to all, read from all) so one outage does not hide parties.
+   Under ?local the same code runs over BroadcastChannel (same-computer play and tests): no network at all.
+   Entries are unauthenticated hints: joining still goes through the real party. */
+(function (g) {
+'use strict';
+const BS = g.BS = g.BS || {}, R = BS.Registry = {};
+const ROOT = 'botstation/v1/parties/';
+const HEARTBEAT = 25000;      // a public party re-announces itself at least this often
+const TTL = 75000;            // a listing nobody refreshed for this long is dropped (3 missed heartbeats)
+const TOMB = 8000;            // after a "gone" message, ignore stragglers for this long
+const PHASES = ['lobby', 'countdown', 'game'];
+Object.assign(R, { ROOT, HEARTBEAT, TTL, TOMB });
+
+// Free public brokers that speak MQTT over secure WebSockets. Point this at your own broker if you prefer:
+//   BS.REGISTRY_BROKERS = [{ url: 'wss://example.com:8884/mqtt', username: '...', password: '...' }]
+BS.REGISTRY_BROKERS = BS.REGISTRY_BROKERS || [
+  { url: 'wss://broker.emqx.io:8084/mqtt' },
+  { url: 'wss://broker.hivemq.com:8884/mqtt' }
+];
+R.now = () => Date.now();
+R.brokers = () => {
+  const search = g.location ? g.location.search : '';
+  const m = /[?&]broker=([^&]+)/.exec(search);          // test hook, loopback only so a crafted link cannot redirect players
+  if (m) { const urls = decodeURIComponent(m[1]).split(',').filter(u => /^wss?:\/\/(127\.0\.0\.1|localhost)[:/]/.test(u)); if (urls.length) return urls.map(url => ({ url })); }
+  if (BS.Net && BS.Net.mode() === 'local') return [{ url: 'local' }];
+  return BS.REGISTRY_BROKERS;
+};
+
+/* ---------------------------------------------------------- pure helpers */
+const clean = (s, n) => String(s == null ? '' : s).replace(/[\u0000-\u001f<>&"]/g, '').trim().slice(0, n);
+const int = (v, lo, hi, d) => { v = Number(v); return Number.isFinite(v) ? Math.max(lo, Math.min(hi, Math.floor(v))) : d; };
+
+// Turn an announcement from the wire into a safe party record (or null). Never trust what other browsers publish.
+R.sanitize = (o, code) => {
+  if (!o || typeof o !== 'object' || o.v !== 1 || !Array.isArray(o.p)) return null;
+  const players = o.p.slice(0, 10).map(a => Array.isArray(a) ? { name: clean(a[0], 12) || '?', color: int(a[1], 0, 11, 0), hat: int(a[2], 0, 5, 0), conn: a[3] !== 0 } : null).filter(Boolean);
+  if (!players.length) return null;
+  const max = int(o.max, 1, 10, 10);
+  return { code, q: int(o.q, 0, 1e12, 0), phase: PHASES.includes(o.ph) ? o.ph : 'game', max, min: int(o.min, 1, 10, 4), players: players.slice(0, max), leader: clean(o.ld, 12) || players[0].name };
+};
+R.joinable = p => p.phase !== 'game' && p.players.length < p.max;
+// open parties first, then fullest first, then by code (stable order while people watch the list)
+R.sort = list => list.slice().sort((a, b) => (R.joinable(b) - R.joinable(a)) || (b.players.length - a.players.length) || (a.code < b.code ? -1 : a.code > b.code ? 1 : 0));
+
+// "alice, bob" -> ['alice','bob']
+R.terms = q => String(q || '').split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+// Does a party match the search? mode 'any': at least one term matches; 'all': every term matches.
+// A term matches a player's name (substring) or the start of the party code (3+ letters). Returns which players matched.
+R.match = (party, terms, mode) => {
+  if (!terms.length) return { ok: true, hits: [], code: false };
+  const hits = new Set(); let codeHit = false, matched = 0;
+  for (const t of terms) {
+    let found = false;
+    party.players.forEach((p, i) => { if (p.name.toLowerCase().includes(t)) { hits.add(i); found = true; } });
+    if (t.length >= 3 && party.code.toLowerCase().startsWith(t)) { codeHit = true; found = true; }
+    if (found) matched++;
+  }
+  return { ok: mode === 'all' ? matched === terms.length : matched > 0, hits: [...hits].sort((x, y) => x - y), code: codeHit };
+};
+R.topicMatch = (filter, topic) => {
+  const f = filter.split('/'), t = topic.split('/');
+  for (let i = 0; i < f.length; i++) {
+    if (f[i] === '#') return true;
+    if (i >= t.length || (f[i] !== '+' && f[i] !== t[i])) return false;
+  }
+  return f.length === t.length;
+};
+
+/* ---------------------------------------------------------------- drivers */
+// A driver is one connection to one "broker": { subscribe(filter), publish(topic, payload, retain), pulse(), close(graceful) }
+// created with handlers { clientId, will, onOpen, onSub, onMessage(topic, payload, retained), onClose(reason) }.
+const rid = () => Math.random().toString(36).slice(2, 10);
+
+function mqttDriver(cfg, h) {
+  const c = new BS.Mqtt.Client(cfg.url, { clientId: h.clientId, keepalive: 30, username: cfg.username, password: cfg.password, will: h.will, onOpen: h.onOpen, onSub: h.onSub, onMessage: h.onMessage, onClose: h.onClose });
+  return { subscribe: f => c.subscribe(f), publish: (t, p, r) => c.publish(t, p, r), pulse: () => c.pulse(), close: gr => c.close(gr), abort: () => c.fail('abort') };
+}
+
+// Same-computer stand-in for a broker: tabs talk over BroadcastChannel, each tab remembers what it published
+// with "retain" and hands it to newcomers; a closing tab clears its own entries (the last-will).
+function localDriver(cfg, h) {
+  const bc = new g.BroadcastChannel('bs-registry-v1'), me = rid(), mine = new Map(), subs = [];
+  let dead = false;
+  const post = m => { try { bc.postMessage(m); } catch (e) { /* channel closed */ } };
+  const bye = () => { mine.forEach((v, t) => post({ t: 'pub', topic: t, payload: '' })); if (h.will) post({ t: 'pub', topic: h.will.topic, payload: h.will.payload || '' }); mine.clear(); };
+  const hide = () => bye();
+  bc.onmessage = e => {
+    const m = e.data;
+    if (!m || dead || (m.to && m.to !== me)) return;
+    if (m.t === 'pub' && subs.some(f => R.topicMatch(f, m.topic))) h.onMessage(m.topic, m.payload, !!m.retained);
+    else if (m.t === 'sub') mine.forEach((payload, topic) => post({ t: 'pub', topic, payload, retained: true, to: m.from }));
+  };
+  if (g.addEventListener) g.addEventListener('pagehide', hide);
+  setTimeout(() => { if (!dead) h.onOpen(); }, 0);
+  const stop = () => { dead = true; if (g.removeEventListener) g.removeEventListener('pagehide', hide); try { bc.close(); } catch (e) { /* ignore */ } };
+  return {
+    subscribe(f) { subs.push(f); post({ t: 'sub', from: me }); setTimeout(() => { if (!dead && h.onSub) h.onSub(true); }, 0); return true; },
+    publish(topic, payload, retain) { if (retain) { if (payload === '') mine.delete(topic); else mine.set(topic, payload); } post({ t: 'pub', topic, payload }); return true; },
+    pulse() {},
+    close(graceful) { if (!graceful) bye(); stop(); },
+    abort() { bye(); stop(); setTimeout(() => h.onClose('abort'), 0); }
+  };
+}
+
+// One connection to one broker that reconnects by itself (1s, 2s, 4s ... 20s, with jitter).
+class Conn {
+  constructor(cfg, h) { this.cfg = cfg; this.h = h; this.state = 'down'; this.fails = 0; this.gen = 0; this.d = null; this.closed = false; this.timer = 0; this.connect(); }
+  connect() {
+    if (this.closed) return;
+    const gen = ++this.gen, make = this.cfg.url === 'local' ? localDriver : mqttDriver;
+    this.state = 'connecting';
+    this.d = (R.driver || make)(this.cfg, {
+      clientId: 'bs-' + rid() + rid(), will: this.h.will,
+      onOpen: () => { if (gen !== this.gen) return; this.state = 'up'; this.fails = 0; if (this.h.filter) this.d.subscribe(this.h.filter); if (this.h.onUp) this.h.onUp(this); },
+      onSub: ok => { if (gen === this.gen && this.h.onSub) this.h.onSub(this, ok); },
+      onMessage: (t, p, r) => { if (gen === this.gen && this.h.onMessage) this.h.onMessage(t, p, r, this); },
+      onClose: why => { if (gen !== this.gen) return; this.state = 'down'; this.fails++; this.d = null; if (this.h.onDown) this.h.onDown(this, why); this.schedule(); }
+    });
+  }
+  schedule() { if (!this.closed) this.timer = setTimeout(() => this.connect(), Math.min(20000, 1000 * Math.pow(2, Math.min(this.fails - 1, 5))) * (0.75 + Math.random() * 0.5)); }
+  retryNow() { if (!this.closed && this.state === 'down') { clearTimeout(this.timer); this.connect(); } }
+  publish(t, p, r) { return this.state === 'up' && !!this.d.publish(t, p, r); }
+  pulse() { if (this.state === 'up' && this.d && this.d.pulse) this.d.pulse(); }
+  close(graceful) { this.closed = true; this.gen++; clearTimeout(this.timer); const d = this.d; this.d = null; this.state = 'down'; if (d) { try { d.close(graceful); } catch (e) { /* ignore */ } } }
+}
+R.Conn = Conn;
+
+/* -------------------------------------------------------------- publisher */
+// The party leader's side. getInfo() returns the party summary, or null when the party is private/closed.
+// Call tick() often (it throttles itself): it republishes on change and as a heartbeat.
+R.publish = (code, getInfo, opts) => {
+  opts = opts || {};
+  const topic = ROOT + code, will = { topic, payload: '', retain: true };
+  let seq = 0, last = '', lastBody = '', lastPub = 0, lastCheck = 0, listed = false, closed = false, conns = [];
+  // After a (re)connect announce at once, with a newer seq: a browser that just processed our old connection's
+  // last-will then accepts it immediately instead of treating it as a straggler.
+  const restamp = () => { const o = JSON.parse(last); o.q = ++seq; return (last = JSON.stringify(o)); };
+  // Connections exist only while the party is public: a private party never talks to a broker.
+  const open = () => { if (!conns.length) conns = (opts.brokers || R.brokers()).map(cfg => new Conn(cfg, { will, onUp: c => { if (last && listed) c.publish(topic, restamp(), true); } })); };
+  const shut = () => { conns.forEach(c => c.close(true)); conns = []; };
+  const send = payload => conns.forEach(c => c.publish(topic, payload, true));
+  return {
+    get conns() { return conns; },
+    get listed() { return listed; },
+    get seq() { return seq; },
+    up: () => conns.filter(c => c.state === 'up').length,
+    tick() {
+      if (closed) return;
+      const now = R.now();
+      if (now - lastCheck < 1000) return;
+      lastCheck = now;
+      const info = getInfo();
+      if (!info) { if (listed) { send(''); listed = false; last = lastBody = ''; } shut(); return; }
+      open();
+      conns.forEach(c => c.pulse());
+      info.v = 1; info.q = 0;
+      const body = JSON.stringify(info);
+      if (body !== lastBody || now - lastPub >= HEARTBEAT) { lastBody = body; info.q = ++seq; last = JSON.stringify(info); lastPub = now; listed = true; send(last); }
+    },
+    close() {
+      if (closed) return;
+      closed = true;
+      if (listed) send('');                      // clear the listing before hanging up (a clean hang-up discards the last-will)
+      listed = false;
+      shut();
+    }
+  };
+};
+
+/* ---------------------------------------------------------------- browser */
+// cb.onChange(list, status) with status { state: 'connecting'|'live'|'error', up, total, ready }.
+R.watch = (cb, opts) => {
+  opts = opts || {};
+  const entries = new Map(), tomb = new Map();
+  let closed = false, ready = false, emitT = 0;
+  const status = () => {
+    const up = conns.filter(c => c.state === 'up').length;
+    return { state: up ? 'live' : conns.every(c => c.fails > 0) ? 'error' : 'connecting', up, total: conns.length, ready: ready || (!up && conns.every(c => c.fails > 0)) };
+  };
+  const list = () => R.sort([...entries.values()].map(e => e.info));
+  const emit = () => { if (closed || emitT) return; emitT = setTimeout(() => { emitT = 0; if (!closed) cb.onChange(list(), status()); }, 0); };
+  const markReady = () => { if (!ready) { ready = true; emit(); } };
+  const onMessage = (topic, payload) => {
+    const code = topic.indexOf(ROOT) === 0 ? topic.slice(ROOT.length) : '';
+    if (!/^[A-Z]{5}$/.test(code)) return;
+    const now = R.now();
+    if (payload === '') {
+      const old = entries.get(code);
+      if (entries.delete(code)) emit();
+      tomb.set(code, { t: now, q: old ? old.info.q : Infinity });      // never seen: ignore everything for a moment (no ghosts)
+      return;
+    }
+    let info = null;
+    try { info = R.sanitize(JSON.parse(payload), code); } catch (e) { /* not ours */ }
+    if (!info) return;
+    const t = tomb.get(code);
+    if (t && now - t.t < TOMB && info.q <= t.q) return;             // a late duplicate of what was just cleared
+    const old = entries.get(code);
+    if (old && info.q < old.info.q) return;                     // an older copy arriving late from the slower broker
+    if (!old && entries.size >= 200) return;                    // never let junk grow without bound
+    entries.set(code, { info, seen: now });
+    emit();
+  };
+  const sweep = () => {
+    const now = R.now(); let changed = false;
+    for (const [c, e] of entries) if (now - e.seen > TTL) { entries.delete(c); changed = true; }
+    for (const [c, t] of tomb) if (now - t.t > TOMB) tomb.delete(c);
+    if (changed) emit();
+  };
+  const conns = (opts.brokers || R.brokers()).map(cfg => new Conn(cfg, {
+    filter: ROOT + '+',
+    onUp: () => emit(),
+    onSub: () => setTimeout(markReady, 600),                    // give the retained burst a moment before saying "nothing here"
+    onDown: () => { emit(); },
+    onMessage
+  }));
+  const sweepT = setInterval(sweep, 3000), failT = setTimeout(markReady, 7000);
+  return {
+    conns, list, status, sweep,
+    retry() { conns.forEach(c => c.retryNow()); emit(); },
+    close() { closed = true; clearInterval(sweepT); clearTimeout(failT); clearTimeout(emitT); conns.forEach(c => c.close(true)); }
+  };
+};
+})(typeof window !== 'undefined' ? window : globalThis);
+
 /* ---- render.js ---- */
 /* Bot Station - canvas rendering: robots, the station, fog of war. Pure drawing; no game logic. */
 (function (g) {
@@ -1744,7 +2191,7 @@ UI.col = col;
 const store = { get: k => { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) { /* ignore */ } } };
 UI.store = store;
 
-UI.screen = id => { for (const s of ['title', 'lobby']) $(s).classList.toggle('hidden', s !== id); };
+UI.screen = id => { for (const s of ['title', 'lobby', 'browser']) $(s).classList.toggle('hidden', s !== id); };
 UI.toast = (txt, ms) => { const t = $('toast'); t.textContent = txt; t.classList.add('show'); clearTimeout(UI._tt); UI._tt = setTimeout(() => t.classList.remove('show'), ms || 2600); };
 
 /* --------------------------------------------------------------- chat box */
@@ -1779,16 +2226,21 @@ UI.buildTitle = app => {
   el('p', 'tag', 'A social-deduction party game for 4–10 players. One of the bots is a saboteur.', card);
   const name = el('input', 'inp', null, card); name.id = 'tName'; name.placeholder = 'Your name'; name.maxLength = 12; name.value = store.get('bs-name');
   const create = el('button', 'btn big primary', 'Create party', card); create.id = 'tCreate';
+  const priv = el('label', 'privrow', null, card), pcb = el('input', null, null, priv); pcb.type = 'checkbox'; pcb.id = 'tPrivate'; pcb.checked = store.get('bs-private') === '1';
+  el('span', null, 'Private party (hide it from Browse parties)', priv);
+  pcb.onchange = () => store.set('bs-private', pcb.checked ? '1' : '');
   el('div', 'or', 'or join a friend', card);
   const row = el('div', 'joinrow', null, card), code = el('input', 'inp code', null, row); code.id = 'tCode'; code.placeholder = 'CODE'; code.maxLength = 5; code.autocapitalize = 'characters';
   const join = el('button', 'btn big', 'Join', row); join.id = 'tJoin';
+  const browse = el('button', 'btn big wide', '🔍 Browse public parties', card); browse.id = 'tBrowse';
+  browse.onclick = () => { const n = name.value.trim(); if (n) store.set('bs-name', n); app.openBrowser(); };
   const msg = el('div', 'msg', '', card); msg.id = 'tMsg';
   const how = el('details', 'how', null, card); el('summary', null, 'How to play', how);
   el('p', null, 'Technicians finish tasks around the station. The saboteur sneaks around eliminating them, sabotaging systems and hiding in the vents. Found a body or suspect someone? Call a meeting, discuss, and vote.', how);
   el('p', null, 'Technicians win by finishing every task or ejecting all saboteurs. The saboteur wins by matching the technicians in number or letting a sabotage run out the clock.', how);
   el('p', null, 'Move: WASD / arrows (or drag). Use: E / Space. Report: R. Eliminate: Q. Vent: V. Sabotage: X. Map: M / Tab.', how);
   const go = fn => () => { const n = name.value.trim(); if (!n) { name.focus(); return UI.status('Pick a name first.', true); } store.set('bs-name', n); fn(n); };
-  create.onclick = go(n => app.create(n));
+  create.onclick = go(n => app.create(n, { public: !pcb.checked }));
   join.onclick = go(n => app.join(code.value, n));
   code.oninput = () => { code.value = BS.Net.parseCode(code.value); };
   [name, code].forEach(i => i.addEventListener('keydown', e => { if (e.key === 'Enter') (code.value ? join : create).click(); }));
@@ -1796,7 +2248,7 @@ UI.buildTitle = app => {
   if (hashCode.length === 5) { code.value = hashCode; UI.status('You were invited to party ' + hashCode + '. Enter a name and press Join.'); join.classList.add('primary'); create.classList.remove('primary'); }
 };
 UI.status = (m, err) => { const e = $('tMsg'); if (!e) return; e.textContent = m || ''; e.className = 'msg' + (err ? ' err' : ''); };
-UI.busy = b => ['tCreate', 'tJoin', 'tName', 'tCode'].forEach(i => { if ($(i)) $(i).disabled = b; });
+UI.busy = b => ['tCreate', 'tJoin', 'tName', 'tCode', 'tBrowse', 'tPrivate'].forEach(i => { if ($(i)) $(i).disabled = b; });
 
 /* ------------------------------------------------------------------ lobby */
 UI.buildLobby = app => {
@@ -1806,6 +2258,8 @@ UI.buildLobby = app => {
   el('div', 'lb-label', 'PARTY CODE', left);
   const code = el('button', 'lb-code', '-----', left); code.id = 'lbCode'; code.title = 'Click to copy the invite link';
   code.onclick = () => app.copyInvite();
+  const vis = el('button', 'vis', '', left); vis.id = 'lbVis';
+  vis.onclick = () => app.send({ k: 'visibility', value: !(app.S.lobby && app.S.lobby.pub) });
   const right = el('div', 'lb-actions', null, top);
   const inv = el('button', 'btn', 'Copy invite link', right); inv.onclick = () => app.copyInvite();
   const leave = el('button', 'btn danger', 'Leave party', right); leave.onclick = () => app.leave();
@@ -1832,6 +2286,10 @@ UI.updateLobby = app => {
   const S = app.S, L = S.lobby; if (!L) return;
   const leader = S.id === L.leader, me = L.players.find(p => p.id === S.id) || {};
   $('lbCode').textContent = L.code;
+  const vis = $('lbVis'), listed = !!L.pub, canVis = leader && (L.phase === 'lobby' || L.phase === 'countdown');
+  vis.textContent = listed ? '🌐 Public party' : '🔒 Private party'; vis.className = 'vis ' + (listed ? 'on' : 'off') + (canVis ? ' can' : ''); vis.disabled = !canVis;
+  vis.title = listed ? (leader ? 'Listed in Browse parties with your players’ names. Click to make it private.' : 'This party is listed in Browse parties.')
+    : (leader ? 'Hidden from Browse parties (friends need the code or link). Click to list it.' : 'This party is private: only people with the code can join.');
   const grid = $('lbPlayers'); grid.innerHTML = '';
   for (let i = 0; i < L.max; i++) {
     const p = L.players[i], c = el('div', 'pcard' + (p ? '' : ' empty') + (p && !p.conn ? ' off' : ''), null, grid);
@@ -1870,6 +2328,135 @@ UI.updateLobby = app => {
     st.textContent = 'START GAME'; st.disabled = !leader || n < L.min;
     note.textContent = leader ? (n < L.min ? 'Need at least ' + L.min + ' players (' + n + ' so far). Share the code!' : 'Everyone ready? Press start.') : 'Waiting for the party leader to start…';
   }
+};
+})(window);
+
+/* ---- ui_browser.js ---- */
+/* Bot Station - the party browser screen: a live list of public parties, a name search, and Join buttons. */
+(function (g) {
+'use strict';
+const BS = g.BS, UI = BS.UI, R = BS.Registry, $ = UI.$, el = BS.el, col = UI.col;
+const PAGE = 40;                                              // rows drawn at once; "Show more" reveals the rest
+const view = UI.bw = { q: '', mode: 'any', built: false, limit: PAGE, cache: new Map() };
+
+UI.buildBrowser = app => {
+  const root = $('browser'); root.innerHTML = ''; view.built = true; view.cache = new Map(); view.limit = PAGE;
+  const card = el('div', 'card bw-card', null, root);
+  const head = el('div', 'bw-head', null, card);
+  const back = el('button', 'btn', '← Back', head); back.id = 'bwBack'; back.onclick = () => app.leaveBrowser();
+  el('h2', null, 'Find a party', head);
+  el('span', 'bw-live', '', head).id = 'bwLive';
+
+  const who = el('label', 'bw-who', null, card); el('span', null, 'Your name', who);
+  const nm = el('input', 'inp', null, who); nm.id = 'bwName'; nm.maxLength = 12; nm.placeholder = 'Pick a name to join';
+  nm.addEventListener('input', () => nm.classList.remove('bad'));
+  nm.addEventListener('change', () => { if (nm.value.trim()) UI.store.set('bs-name', nm.value.trim()); });
+  el('div', 'msg', '', card).id = 'bwMsg';
+
+  const sr = el('div', 'bw-search', null, card), box = el('div', 'bw-box', null, sr);
+  const q = el('input', 'inp', null, box); q.id = 'bwQuery'; q.placeholder = 'Search players or party code…'; q.autocomplete = 'off'; q.spellcheck = false; q.value = view.q;
+  q.setAttribute('aria-label', 'Search for players or a party code');
+  const clr = el('button', 'bw-clear', '✕', box); clr.id = 'bwClear'; clr.title = 'Clear search'; clr.type = 'button'; clr.setAttribute('aria-label', 'Clear search');
+  const research = () => { view.limit = PAGE; UI.updateBrowser(app); };
+  q.oninput = () => { view.q = q.value; research(); };
+  q.addEventListener('keydown', e => { if (e.key === 'Escape') { q.value = view.q = ''; research(); } });
+  clr.onclick = () => { q.value = view.q = ''; q.focus(); research(); };
+  const seg = el('div', 'seg', null, sr); seg.title = 'With several names: find parties with any of them, or with all of them';
+  [['any', 'Any name'], ['all', 'All names']].forEach(([k, t]) => { const b = el('button', 'seg-b', t, seg); b.dataset.mode = k; b.type = 'button'; b.onclick = () => { view.mode = k; research(); }; });
+  el('div', 'bw-hint', 'Looking for friends? Type their names, separated by commas. Private parties are never listed.', card);
+
+  el('div', 'bw-list', null, card).id = 'bwList';
+  const foot = el('div', 'bw-foot', null, card);
+  el('span', 'bw-count', '', foot).id = 'bwCount';
+  const mk = el('button', 'btn', 'Create a party instead', foot); mk.onclick = () => { app.leaveBrowser(); const t = $('tName'); if (t) t.focus(); };
+};
+
+UI.browserStatus = (m, err) => { const e = $('bwMsg'); if (!e) return; e.textContent = m || ''; e.className = 'msg' + (err ? ' err' : ''); };
+UI.browserBusy = b => { const r = $('browser'); if (r) r.classList.toggle('busy', !!b); const n = $('bwName'); if (n) n.disabled = !!b; };
+
+UI.openBrowser = (app, msg) => {
+  if (!view.built || !$('bwList')) UI.buildBrowser(app);
+  const nm = $('bwName'); if (!nm.value) nm.value = UI.store.get('bs-name');
+  UI.browserBusy(false); UI.browserStatus(msg || '', !!msg);
+  UI.updateBrowser(app);
+  if (g.matchMedia && g.matchMedia('(pointer:fine)').matches) $('bwQuery').focus();
+};
+
+// a name chip for each player, the ones that match the search emphasised
+const chip = (p, hit, parent) => {
+  const c = el('span', 'chip' + (hit ? ' hit' : '') + (p.conn ? '' : ' off'), null, parent);
+  c.appendChild(BS.R.icon(col(p.color), p.hat, 26)); el('span', null, p.name, c);
+  return c;
+};
+
+const rowEl = (app, p, m, open, full) => {
+  const row = el('div', 'bparty' + (open ? '' : ' closed'), null); row.dataset.code = p.code;
+  el('div', 'bp-code' + (m.code ? ' hit' : ''), p.code, row);
+  const main = el('div', 'bp-main', null, row), top = el('div', 'bp-top', null, main);
+  el('span', 'bp-leader', '👑 ' + p.leader, top);
+  el('span', 'pill pl-' + (full ? 'full' : p.phase), (full ? 'Full' : p.phase === 'game' ? 'In game' : p.phase === 'countdown' ? 'Starting…' : 'In lobby') + ' · ' + p.players.length + '/' + p.max, top);
+  const pl = el('div', 'bp-players', null, main); p.players.forEach((x, i) => chip(x, m.hits.indexOf(i) >= 0, pl));
+  const act = el('div', 'bp-act', null, row), b = el('button', 'btn' + (open ? ' primary' : ''), open ? 'Join' : full ? 'Full' : 'In game', act);
+  b.disabled = !open; b.title = open ? 'Join party ' + p.code : full ? 'This party is full' : 'A game is already in progress';
+  b.onclick = () => {
+    const nm = $('bwName'), name = nm.value.trim();
+    if (!name) { nm.classList.add('bad'); nm.focus(); return UI.browserStatus('Pick a name first.', true); }
+    UI.store.set('bs-name', name); UI.browserStatus('');
+    app.joinFromBrowser(p.code, name);
+  };
+  return row;
+};
+
+UI.updateBrowser = app => {
+  const S = app.S, list = $('bwList'); if (!list || S.screen !== 'browser') return;
+  const { list: all, st } = S.browse, terms = R.terms(view.q), filtering = terms.length > 0;
+  $('bwQuery').value !== view.q && ($('bwQuery').value = view.q);
+  $('bwClear').classList.toggle('hidden', !view.q);
+  document.querySelectorAll('#browser .seg-b').forEach(b => b.classList.toggle('on', b.dataset.mode === view.mode));
+
+  const live = $('bwLive');
+  if (st.state === 'live') { live.textContent = '● Live'; live.className = 'bw-live on'; live.title = 'Connected to the party list'; }
+  else if (st.state === 'error') { live.textContent = '● Offline'; live.className = 'bw-live off'; live.title = 'Could not reach the party list'; }
+  else { live.textContent = '● Connecting…'; live.className = 'bw-live'; live.title = ''; }
+
+  const rows = all.map(p => ({ p, m: R.match(p, terms, view.mode) })).filter(x => x.m.ok), shown = rows.slice(0, view.limit);
+
+  // The registry reports again on every heartbeat, so only rows whose content changed are rebuilt: a row the
+  // pointer is pressing on must not be swapped out from under it (that would swallow the click).
+  const slot = (key, sig, build) => { let n = view.cache.get(key); if (!n || n.sig !== sig) { n = { sig, el: build() }; view.cache.set(key, n); } return n.el; };
+  const want = [];
+  shown.forEach(({ p, m }) => {
+    const open = R.joinable(p), full = p.phase !== 'game' && p.players.length >= p.max;
+    const sig = [p.leader, p.phase, p.max, open, full, m.code, m.hits.join(), p.players.map(x => [x.name, x.color, x.hat, x.conn].join('\u0001')).join('\u0002')].join('\u0003');
+    want.push([ 'p:' + p.code, slot('p:' + p.code, sig, () => rowEl(app, p, m, open, full)) ]);
+  });
+  if (!rows.length) {
+    const sig = [filtering, all.length, st.state, st.ready, view.q.trim()].join('\u0003');
+    want.push([ 'empty', slot('empty', sig, () => {
+      const e = el('div', 'bw-empty', null);
+      if (filtering && all.length) {
+        el('b', null, 'No public party matches “' + view.q.trim() + '”.', e);
+        el('span', null, all.length + ' public ' + (all.length === 1 ? 'party is' : 'parties are') + ' hidden by your search.', e);
+        const c = el('button', 'btn', 'Clear search', e); c.onclick = () => { view.q = ''; view.limit = PAGE; UI.updateBrowser(app); };
+      } else if (st.state === 'error') {
+        el('b', null, 'Can’t reach the party list right now.', e);
+        el('span', null, 'You can still join a friend with their party code. We keep retrying in the background.', e);
+        const r = el('button', 'btn', 'Try again', e); r.onclick = () => app.retryBrowser();
+      } else if (!st.ready) el('span', null, 'Looking for parties…', e);
+      else { el('b', null, 'No public parties right now.', e); el('span', null, 'Be the first: create a party and it will show up here for everyone.', e); }
+      return e;
+    }) ]);
+  } else if (rows.length > shown.length) {
+    const left = rows.length - shown.length;
+    want.push([ 'more', slot('more', String(left), () => { const b = el('button', 'btn bw-more', 'Show ' + Math.min(left, PAGE) + ' more' + (left > PAGE ? ' (' + left + ' hidden)' : ''), null); b.onclick = () => { view.limit += PAGE; UI.updateBrowser(app); }; return b; }) ]);
+  }
+  for (const k of [...view.cache.keys()]) if (!want.some(w => w[0] === k)) view.cache.delete(k);
+  let cur = list.firstChild;                                  // put the elements in order, touching only what differs
+  want.forEach(w => { if (w[1] === cur) cur = cur.nextSibling; else list.insertBefore(w[1], cur); });
+  while (cur) { const nx = cur.nextSibling; list.removeChild(cur); cur = nx; }
+
+  const players = all.reduce((n, p) => n + p.players.length, 0);
+  $('bwCount').textContent = st.ready || all.length ? (filtering ? rows.length + ' of ' : '') + all.length + ' public ' + (all.length === 1 ? 'party' : 'parties') + ' · ' + players + ' ' + (players === 1 ? 'player' : 'players') : '';
 };
 })(window);
 
@@ -2133,6 +2720,7 @@ const S = App.S = {
   screen: 'title', link: null, host: null, hostHandle: null, stopTick: null, leaving: false, reconnecting: false, lastRx: 0,
   token: '', name: '', id: 0, code: '', leader: 0, lobby: null, color: Math.floor(Math.random() * 12), hat: 0,
   inGame: false, phase: '', role: 'crew', alive: true, mates: [], tasks: [], tasksVisible: true, set: BS.defaultSettings(),
+  pub: null, watch: null, browse: { list: [], st: { state: 'connecting', up: 0, total: 0, ready: false } }, joinFrom: '',
   players: new Map(), x: 0, y: 0, face: 1, moving: false, vent: -1, others: new Map(), bodies: [], fx: [],
   sab: null, doors: new Set(), kcd: 0, scd: 0, dcd: 0, ecd: 0, tp: 0, emerg: 1, panel: null, overlay: null, admin: null, ptr: null
 };
@@ -2151,16 +2739,18 @@ function attach(link) {
   link.onClose = () => { if (S.link === link) onLinkClose(); };
 }
 
-App.create = name => {
+App.create = (name, opts) => {
+  opts = opts || {};
   S.name = name; UI.busy(true); UI.status('Creating your party…');
   S.hostHandle = Net.hostParty({
     onOpen: code => {
       if (S.host) return;
       S.code = code;
-      const host = S.host = new BS.Host({ code });
+      const host = S.host = new BS.Host({ code, public: opts.public !== false });
       const pair = Net.loopback(); host.addLink(pair[0]);
+      S.pub = BS.Registry.publish(code, () => host.publicInfo());     // lists the party in the browser while it is public
       let last = performance.now();
-      S.stopTick = Net.ticker(() => { const n = performance.now(); host.tick(Math.min(0.1, (n - last) / 1000)); last = n; }, 33);
+      S.stopTick = Net.ticker(() => { const n = performance.now(); host.tick(Math.min(0.1, (n - last) / 1000)); last = n; if (S.pub) S.pub.tick(); }, 33);
       attach(pair[1]); sendJoin();
     },
     onLink: link => { if (S.host) S.host.addLink(link); },
@@ -2168,10 +2758,24 @@ App.create = name => {
   });
 };
 
-App.join = (code, name) => {
-  S.name = name; UI.busy(true); UI.status('Connecting…');
-  Net.joinParty(code, { onOpen: link => { attach(link); sendJoin(); }, onError: msg => { UI.busy(false); UI.status(msg, true); } });
+App.join = (code, name, ui) => {
+  ui = ui || { busy: UI.busy, status: UI.status };            // where progress and errors are shown (title screen or party browser)
+  S.name = name; ui.busy(true); ui.status('Connecting…');
+  Net.joinParty(code, { onOpen: link => { attach(link); sendJoin(); }, onError: msg => { ui.busy(false); ui.status(msg, true); } });
 };
+
+/* ----------------------------------------------------------- party browser */
+App.openBrowser = msg => {
+  App.closeBrowser();
+  S.screen = 'browser'; S.browse = { list: [], st: { state: 'connecting', up: 0, total: 0, ready: false } };
+  UI.screen('browser'); UI.openBrowser(App, msg);
+  S.watch = BS.Registry.watch({ onChange: (list, st) => { S.browse = { list, st }; UI.updateBrowser(App); } });
+};
+App.closeBrowser = () => { if (S.watch) { try { S.watch.close(); } catch (e) { /* ignore */ } S.watch = null; } };
+App.retryBrowser = () => { if (S.watch) S.watch.retry(); };
+App.leaveBrowser = () => { App.closeBrowser(); S.screen = 'title'; UI.screen('title'); };
+App.joinFromBrowser = (code, name) => { S.joinFrom = 'browser'; App.join(code, name, { busy: UI.browserBusy, status: UI.browserStatus }); };
+g.addEventListener('pagehide', () => { if (S.pub) { S.pub.close(); S.pub = null; } App.closeBrowser(); });
 
 App.tryResume = () => {
   let code = '';
@@ -2218,8 +2822,10 @@ setInterval(() => {
   if (performance.now() - S.lastRx > 9000) onLinkClose();
 }, 2000);
 
-App.toTitle = msg => {
-  S.reconnecting = false; S.leaving = false;
+App.toTitle = (msg, dest) => {
+  S.reconnecting = false; S.leaving = false; S.joinFrom = '';
+  if (S.pub) { S.pub.close(); S.pub = null; }                  // take the party off the public list
+  App.closeBrowser();
   if (S.stopTick) S.stopTick(); S.stopTick = null;
   if (S.hostHandle) { try { S.hostHandle.close(); } catch (e) { /* ignore */ } } S.hostHandle = null;
   try { if (S.link) S.link.close(); } catch (e) { /* ignore */ }
@@ -2228,7 +2834,8 @@ App.toTitle = msg => {
   App.closeOverlays && App.closeOverlays();
   UI.hideMeeting(); UI.hideEject(); UI.hideOver(); UI.hideIntro();
   show('hud', false); show('conn', false);
-  UI.screen('title'); UI.busy(false); UI.status(msg || '', !!msg);
+  UI.busy(false); UI.status(dest === 'browser' ? '' : msg || '', dest !== 'browser' && !!msg);
+  if (dest === 'browser') App.openBrowser(msg); else UI.screen('title');
   if (location.hash) history.replaceState(null, '', location.pathname + location.search);
 };
 
@@ -2236,10 +2843,10 @@ App.toTitle = msg => {
 function onMsg(m) {
   switch (m.k) {
     case 'welcome':
-      S.id = m.id; S.code = m.code;
+      S.id = m.id; S.code = m.code; S.joinFrom = ''; App.closeBrowser();
       if (!S.host) { try { sessionStorage.setItem('bs-party', m.code); } catch (e) { /* ignore */ } }
       break;
-    case 'reject': App.toTitle(m.why); break;
+    case 'reject': App.toTitle(m.why, S.joinFrom); break;      // a join from the party browser returns there, with the reason
     case 'kicked': App.toTitle('You were kicked from the party.'); break;
     case 'closed': App.toTitle(m.why || 'The party was closed.'); break;
     case 'toast': UI.toast(m.text); break;
@@ -2590,7 +3197,7 @@ function draw(now) {
 }
 
 /* ------------------------------------------------------------------- boot */
-UI.buildTitle(App); UI.buildLobby(App); buildHud(); UI.screen('title');
+UI.buildTitle(App); UI.buildLobby(App); UI.buildBrowser(App); buildHud(); UI.screen('title');
 let last = performance.now();
 function frame(now) {
   requestAnimationFrame(frame);
